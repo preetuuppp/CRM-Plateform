@@ -13,6 +13,7 @@ const App = () => {
             <li><Link to="/" className="hover:underline">Add Contact</Link></li>
             <li><Link to="/contacts" className="hover:underline">Contacts</Link></li>
             <li><Link to="/companies" className="hover:underline">Companies</Link></li>
+
           </ul>
         </nav>
 
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/" element={<AddContact />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/companies" element={<Companies />} />
+
           </Routes>
         </div>
       </div>
