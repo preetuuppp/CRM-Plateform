@@ -9,7 +9,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/contacts');
+        const response = await axios.get('https://bcd-cwfk.onrender.com/contacts');
         setContacts(response.data.results);  
       } catch (error) {
         console.error("Error fetching contacts", error);

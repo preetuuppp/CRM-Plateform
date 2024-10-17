@@ -6,7 +6,7 @@ const Companies = () => {
 
   const fetchCompanies = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/companies');
+      const response = await axios.get('https://bcd-cwfk.onrender.com/companies');
       setCompanies(response.data.results);
     } catch (error) {
       console.error("Error fetching companies:", error);
