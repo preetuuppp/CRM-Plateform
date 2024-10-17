@@ -6,8 +6,8 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+const acccessToken = 'pat-na1-e60a534a-9e18-4417-a962-b0d5c5e15679';
 
-const acccessToken = "pat-na1-e60a534a-9e18-4417-a962-b0d5c5e15679";
 app.get("/", async (req, res) => {
     res.json("server is running")
 })
@@ -54,6 +54,7 @@ app.get("/companies", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
 
 const PORT =8080;
 app.listen(PORT, () => {
