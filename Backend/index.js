@@ -1,12 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
-require("dotenv").config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-const acccessToken = 'pat-na1-e60a534a-9e18-4417-a962-b0d5c5e15679';
+
+const acccessToken=process.env.ACCESS_TOKEN
 
 app.get("/", async (req, res) => {
     res.json("server is running")
