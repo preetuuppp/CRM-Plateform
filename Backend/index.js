@@ -13,15 +13,16 @@ app.get("/", async (req, res) => {
     res.json("server is running")
 })
 app.get("/contacts", async (req, res) => {
-  const { offset = 0 } = req.query;
+  const { page = 0 } = req.query;
   try {
-    const response = await axios.get(`https://api.hubapi.com/crm/v3/objects/contacts?limit=100&offset=${offset}&properties=email,phone`,
+    const response = await axios.get(`https://api.hubapi.com/crm/v3/objects/contacts?limit=100&page=${page}&properties=email,phone`,
       {
       headers: {
         Authorization: `Bearer ${acccessToken}`,
       },
     }
   );
+  console.log('res',response.data.length)
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -45,13 +46,31 @@ app.post("/contacts", async (req, res) => {
 });
 
 app.get("/companies", async (req, res) => {
-  const { offset = 0 } = req.query; 
+  const { page = 0 } = req.query; 
   try {
-    const response = await axios.get(`https://api.hubapi.com/crm/v3/objects/companies?limit=100&offset=${offset}&properties=email,phone`, {
+    const response = await axios.get(`https://api.hubapi.com/crm/v3/objects/companies?limit=100&page=${page}`, {
       headers: {
         Authorization: `Bearer ${acccessToken}`,
       },
     });
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
+app.get("/tickets", async (req, res) => {
+  
+  try {
+    const response = await axios.get(
+      `https://api.hubapi.com/crm/v3/objects/tickets?properties=hs_pipeline,hs_pipeline_stage,subject`,
+      {
+        headers: {
+          Authorization: `Bearer ${acccessToken}`,
+        },
+      }
+    );
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: error.message });
