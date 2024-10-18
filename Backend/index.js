@@ -22,7 +22,6 @@ app.get("/contacts", async (req, res) => {
       },
     }
   );
-  console.log('res',response.data.length)
     res.json(response.data);
   } catch (error) {
     res.status(500).json({ error: error.message });
