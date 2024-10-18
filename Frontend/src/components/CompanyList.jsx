@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Companies = () => {
@@ -18,16 +18,16 @@ const Companies = () => {
   }, []);
 
   return (
-    <div className="bg-white p-6 rounded shadow">
-      <h2 className="text-xl font-bold mb-4">Companies</h2>
-      <ul className="space-y-3">
+    <div className="container mx-auto p-6">
+      <h2 className="text-2xl font-bold mb-4 text-center">Companies</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {companies.map(company => (
-          <li key={company.id} className="flex justify-between items-center p-4 bg-gray-100 rounded-lg shadow">
-            <span>{company.properties.name}</span>
-            <span>{company.properties.domain}</span>
-          </li>
+          <div key={company.id} className="p-4 bg-gray-100 rounded-lg shadow-lg">
+            <h3 className="font-semibold text-gray-800">{company.properties.name}</h3>
+            <p className="text-gray-600">{company.properties.domain}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
