@@ -9,7 +9,7 @@ const Contacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('https://bcd-cwfk.onrender.com/contacts');
+        const response = await axios.get('https://backenddeploy-nmt5.onrender.com/contacts');
         setContacts(response.data.results);  
       } catch (error) {
         console.error("Error fetching contacts", error);
@@ -29,9 +29,12 @@ const Contacts = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {currentContacts.map((contact, index) => (
           <div key={index} className="border p-4 rounded shadow-lg bg-white">
-            <p className="font-semibold text-gray-800">
+            <h3 className="font-semibold  text-gray-800">
               Email: {contact.properties.email}
-            </p>
+            </h3>
+            <h3 className="text-gray-600">
+              Phone: {contact.properties.phone}
+            </h3>
           </div>
         ))}
       </div>
