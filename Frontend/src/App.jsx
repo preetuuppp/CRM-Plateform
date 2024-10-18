@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import AddContact from './components/AddContactForm';
 import Contacts from './components/ContactList';
 import Companies from './components/CompanyList';
+import TicketList from './components/TicketList';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
             <li><Link to="/" className="hover:underline">Add Contact</Link></li>
             <li><Link to="/contacts" className="hover:underline">Contacts</Link></li>
             <li><Link to="/companies" className="hover:underline">Companies</Link></li>
+            <li><Link to="/tickets" className="hover:underline">Tickets</Link></li>
 
           </ul>
         </nav>
@@ -22,6 +24,7 @@ const App = () => {
             <Route path="/" element={<AddContact />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/companies" element={<Companies />} />
+            <Route path="/tickets" element={<TicketList />} />
 
           </Routes>
         </div>

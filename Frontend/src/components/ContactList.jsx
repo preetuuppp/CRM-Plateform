@@ -26,6 +26,7 @@ const Contacts = () => {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4 text-center">Contacts</h2>
+      {currentContacts&& currentContacts.length > 0 ? (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {currentContacts.map((contact, index) => (
           <div key={index} className="border p-4 rounded shadow-lg bg-white">
@@ -38,7 +39,9 @@ const Contacts = () => {
           </div>
         ))}
       </div>
-
+) :  (
+  <p className="text-3xl font-bold mb-4 text-center">No Contacts Found</p>
+)}
       {/* Pagination */}
       <div className="flex justify-center mt-4 space-x-4">
         <button
