@@ -7,7 +7,7 @@ const TicketList = () => {
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-         const response = await axios.get('https://backenddeploy-nmt5.onrender.com/tickets');
+         const response = await axios.get('http://localhost:8080/tickets');
 
         setTickets(response.data.results);
       } catch (err) {

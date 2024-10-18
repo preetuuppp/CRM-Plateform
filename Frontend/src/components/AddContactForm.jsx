@@ -9,7 +9,7 @@ const AddContact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://backenddeploy-nmt5.onrender.com/contacts', { email, phone });
+      await axios.post('http://localhost:8080/contacts', { email, phone });
       setSuccesMessage("Contact added successfully!");
     } catch (error) {
       setSuccesMessage("Error adding contact.");
