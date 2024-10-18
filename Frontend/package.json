@@ -1,15 +1,11 @@
 {
   "name": "hubspot",
-  "homepage": "https://preetuuppp.github.io/CRM-Plateform/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint ."
   },
   "dependencies": {
