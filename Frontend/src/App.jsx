@@ -1,34 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AddContact from './components/AddContactForm';
-import Contacts from './components/ContactList';
 import Companies from './components/CompanyList';
 import TicketList from './components/TicketList';
+import Contacts from './components/ContactList';
+import { ContactProvider } from './context/ContactContext';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
    <Router>
+      <ContactProvider>
       <div className="bg-gray-100 min-h-screen">
-        <nav className="bg-blue-600 text-white p-4">
-          <ul className="flex justify-center space-x-8">
-            <li><Link to="/" className="hover:underline">Add Contact</Link></li>
-            <li><Link to="/contacts" className="hover:underline">Contacts</Link></li>
-            <li><Link to="/companies" className="hover:underline">Companies</Link></li>
-            <li><Link to="/tickets" className="hover:underline">Tickets</Link></li>
-
-          </ul>
-        </nav>
-
+      <Navbar/>
         <div className="container mx-auto p-4">
           <Routes>
             <Route path="/" element={<AddContact />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/companies" element={<Companies />} />
             <Route path="/tickets" element={<TicketList />} />
-
           </Routes>
         </div>
       </div>
+      </ContactProvider>
+
     </Router>
   );
 };

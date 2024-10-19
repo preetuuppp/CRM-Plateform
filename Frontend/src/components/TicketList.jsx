@@ -25,9 +25,6 @@ const TicketList = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {tickets.map(ticket => (
             <div key={ticket.id} className="p-4 bg-gray-100 rounded-lg shadow-lg">
-              <p className="font-semibold text-gray-800">
-                <strong>Subject:</strong> {ticket.properties.subject}
-              </p>
               <p className="text-gray-600">
                 <strong>Pipeline:</strong> {ticket.properties.hs_pipeline}
               </p>
