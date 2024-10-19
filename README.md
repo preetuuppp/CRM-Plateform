@@ -9,23 +9,6 @@ This website is fully mobile friendly. You can use this website in mobile, table
 - List 100 companies with domain and name.
 - List ticket pipelines and stages using HubSpot's Ticket API.
 
-# Screenshots
-
-## AddContact Page
-![Screenshot 2024-10-18 144319](https://github.com/user-attachments/assets/3e487fa5-5789-43e5-b847-53806fad8f3a)
-
-## Contact page
-![Screenshot 2024-10-19 130033](https://github.com/user-attachments/assets/6c0e885c-21b7-4a06-85d1-f3a5d7746be6)
-
-
-![Screenshot 2024-10-19 130043](https://github.com/user-attachments/assets/85913ec5-1931-41a0-8ecf-e1f17bb42b4a)
-
-## Companies Page
-![Screenshot 2024-10-19 125502](https://github.com/user-attachments/assets/85693d19-ba55-406b-a69c-de068bae9c75)
-
-## Tickets Page
-![Screenshot 2024-10-19 125523](https://github.com/user-attachments/assets/e07d0646-9e57-4882-9154-1cd4b656d6ac)
-
 # Tech Stack
 ## Frontend
 
